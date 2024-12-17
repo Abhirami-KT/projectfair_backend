@@ -7,6 +7,6 @@ const connectionString = process.env.connectionString //(RHS connectionString is
 //3. define connection
 mongoose.connect(connectionString).then(res=>{
     console.log("Project fair server connected with mongoDB");
-}).catch(err=>{
-    console.log("Error: " + err)
-})
+}).catch((err) => {
+    console.error('Error connecting to MongoDB: ', err.message); // Use 'err' here to catch the error
+});
